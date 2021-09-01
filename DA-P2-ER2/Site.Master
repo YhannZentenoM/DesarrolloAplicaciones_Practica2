@@ -1,0 +1,82 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="DA_P2_ER2.SiteMaster" %>
+
+<!DOCTYPE html> 
+<html> 
+    <script languaje="C#" runat="server"> 
+        void Pulsado(Object sender, EventArgs args)
+        {
+            switch (Artefactos.Value) {
+                case "1":
+                    codigo.Value = "AR-0001";
+                    nombre.Value = "Microondas";
+                    descripcion.Value = "Diseño elegante con calidad de clase mundial.";
+                    marca.Value = "SAMSUNG";
+                    precio.Value = "550.00";
+                    Grafico.Src = "https://images.samsung.com/is/image/samsung/latin-microwave-oven-grill-mg28f303tas-mg28f303tas-ap-frontsilver-90476301?$720_576_PNG$";
+                    break;
+                 case "2":
+                    codigo.Value = "AR-0002";
+                    nombre.Value = "Refrigeradora";
+                    descripcion.Value = "Aparato eléctrico en forma de armario de metal esmaltado de doble pared.";
+                    marca.Value = "SAMSUNG";
+                    precio.Value = "1450.00";
+                    Grafico.Src = "https://www.lg.com/pe/images/refrigeradoras/md07518084/gallery/medium01.jpg";
+                    break;
+                 case "3":
+                    codigo.Value = "AR-0003";
+                    nombre.Value = "Cocina";
+                    descripcion.Value = "Una cocina eléctrica es una variación de la cocina que convierte la electricidad en calor para cocinar.";
+                    marca.Value = "MABE";
+                    precio.Value = "370.00";
+                    Grafico.Src = "https://home.ripley.com.pe/Attachment/WOP_5/2003248742280/2003248742280_2.jpg";
+                    break;
+                 case "4":
+                    codigo.Value = "AR-0004";
+                    nombre.Value = "Horno";
+                    descripcion.Value = "dispositivo que permite generar calor y mantenerlo dentro de un cierto compartimiento.";
+                    marca.Value = "THOMAS";
+                    precio.Value = "240.00";
+                    Grafico.Src = "https://promart.vteximg.com.br/arquivos/ids/428925-1000-1000/116559.jpg?v=637232666301930000";
+                    break;
+            }            
+        }
+
+    </script>
+    <head> 
+        <title>Conversor de temperatura</title>
+        <style>
+            select {
+                width: 300px;
+            }
+            img{
+                width: 250px;
+            }
+        </style>
+    </head> 
+    <body> 
+        <form id="Form1" runat="server" method="POST">
+            <div> 
+                <h1>Seleccionar artefactos</h1> Artefacto: &nbsp; 
+                <select id="Artefactos" runat="server"/>
+                <input type="submit" id="MostrarDatos" runat="server" value="Cargar Datos" onserverclick="Pulsado"/>
+                <br /><br />
+                <label>Código:</label>
+                <input type="text" id="codigo" value="" runat="server" /><br />
+                <label>Nombre:</label>
+                <input type="text" id="nombre" value="" runat="server" /><br />
+                <label>Descripción:</label>
+                <input type="text" id="descripcion" value="" runat="server" /><br />
+                <label>Marca:</label>
+                <input type="text" id="marca" value="" runat="server" /><br />
+                <label>Precio:</label>
+                <input type="text" id="precio" value="" runat="server" /><br />
+                <label>Imagen</label>
+                <img id="Grafico" runat="server" />
+
+            </div> 
+
+        </form> 
+
+    </body> 
+
+</html>
